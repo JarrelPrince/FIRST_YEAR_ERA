@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner hatdog = new Scanner(System.in);
+
+        System.out.println("====================");
+        System.out.println("=== MENU NI SOYSAY ===");
+        System.out.println("1. Itlog with egg: 90$");
+        System.out.println("2. Hotdog with bacon: 20$");
+        System.out.println("3. Sinugbang Bangus: 52$");
+        System.out.println("4. Chorizo ni lotlot: 45$");
+        System.out.println("5. Lugaw ni soysoy: 67$");
+        System.out.println("Type your order here");
+        
+         String order = hatdog.nextLine();
+        boolean validOrder = true;
+        double price = 0;
+        switch (order) {
+            case "A":
+            case "a":
+                System.out.println("Itlog with egg");
+                System.out.println("Price: 90$");
+                price = 90;
+                break;
+            case "B":
+            case "b":
+                System.out.println("Hotdog with bacon");
+                System.out.println("Price: 20$");
+                price = 20;
+                break;
+            case "C":
+            case "c":
+                System.out.println("Sinugbang Bangus");
+                System.out.println("Price: 52$");
+                price = 52;
+                break;
+            case "D":
+            case "d":
+                System.out.println("Chorizo ni Lotlot");
+                System.out.println("Price: 45$"); 
+                price = 45;
+                break;
+            case "E":
+            case "e":
+                System.out.println("Lugaw ni soysoy");
+                System.out.println("Price: 67$");
+                price = 67;
+                break;
+                 
+            default:
+                System.out.println("Sorry thats not in our menu sher");
+                validOrder = false;
+        }
+        if (validOrder) {
+        System.out.println("DINE IN OR TAKEOUT?");
+        String apilaNalangpudana = hatdog.nextLine();
+        System.out.println("Payment Method: Cash/Card");
+        String payment = hatdog.nextLine();
+            if (payment.equalsIgnoreCase("Cash")){
+                System.out.println("Enter your Amount");
+                double amount = hatdog.nextDouble();
+                if (amount >= price){
+                    double change = amount - price;
+                    System.out.println("Pay amount: " + amount + "$");
+                    System.out.println("Change amount: " + change + "$");
+                    System.out.println("THANKYOU FOR YOUR ORDER PLEASE WAIT IN THE COUNTER");
+                }else {
+                    System.out.println("Insufficient amount!");
+                    System.out.println("You need: " + (price - amount) + " more.");
+                }
+                }
+            }
+        
+        
+        
+        
+    }
+}
